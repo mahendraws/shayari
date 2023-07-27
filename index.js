@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const cor = require('cors')
 const  bodyParser = require('body-parser')
 const session = require('express-session')
-
+require('dotenv').config()
 const app = express()
 app.use(cor({origin:'*'}))
 app.use(session({
@@ -24,8 +24,8 @@ const shayariRouter = require('./router/shayariRouter.js')
 
 app.use('/',userRouter);
 app.use('/',shayariRouter);
-
-mongoose.connect('mongodb+srv://admin:nidhi123@cluster0.uoewqy1.mongodb.net/shayar?retryWrites=true&w=majority').then(()=>{
+const port = process.env.PORT || 4000;
+mongoose.connect(process.env.DB).then(()=>{
 
 
 app.get('/',(req,res)=>{
@@ -35,7 +35,7 @@ res.send("hi")
 })
 
 console.log("DB conected");
-app.listen(4000,()=>{
+app.listen(port,()=>{
     console.log("Server started");
 })
 
