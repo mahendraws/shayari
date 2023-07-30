@@ -5,7 +5,9 @@ const getShyari = async (req,res)=>{
     const {uid} = req.body
        const shayari = await Shayari.find({userid:uid})
 
-       //console.log(req.session.userid)
+       //console.log(req.cookies.userid)
+	   
+	   console.log('Cookies: ', req.cookies);
        if(shayari){
         res.send(shayari)
        }else{
