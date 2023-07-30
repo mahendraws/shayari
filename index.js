@@ -28,7 +28,7 @@ mongoose.connect(process.env.DB).then(()=>{
 
 
 app.get('/',(req,res)=>{
-req.session.userid="1234"
+//req.session.userid="1234"
 res.send("hi")
 
 })
@@ -41,4 +41,4 @@ app.listen(port,()=>{
 })
 
 
-module.exports = session
+//module.exports = session
