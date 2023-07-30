@@ -1,6 +1,6 @@
 const User = require('../model/user.js')
 const bcrypt = require("bcrypt")
-const session = require('../index.js')
+//const session = require('../index.js')
 //const session = require('express-session')
 
 
@@ -38,7 +38,7 @@ const userSignup=async(req,res)=>{
             {
                 
                 //req.session.userid=user.name
-				res.cookie('userid', user.name)
+				res.cookie("userid", user.name)
                 console.log(req.session.userid)
                 res.json({user:user})
 
