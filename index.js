@@ -3,8 +3,11 @@ const mongoose = require('mongoose')
 const cor = require('cors')
 const  bodyParser = require('body-parser')
 const session = require('express-session')
+var cookieParser = require('cookie-parser')
+
 require('dotenv').config()
 const app = express()
+app.use(cookieParser())
 app.use(cor({origin:'*'}))
 app.use(session({
     secret:"myshayariproject" ,
