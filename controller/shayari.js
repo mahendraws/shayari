@@ -5,7 +5,7 @@ const getShyari = async (req,res)=>{
     const {uid} = req.body
        const shayari = await Shayari.find({userid:uid})
 
-       console.log(req.session.userid)
+       //console.log(req.session.userid)
        if(shayari){
         res.send(shayari)
        }else{
