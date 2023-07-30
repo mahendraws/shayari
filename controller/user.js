@@ -37,7 +37,7 @@ const userSignup=async(req,res)=>{
             if(user)
             {
                 
-                req.session.userid=user.name
+                //req.session.userid=user.name
 				res.cookie('userid', user.name)
                 console.log(req.session.userid)
                 res.json({user:user})
